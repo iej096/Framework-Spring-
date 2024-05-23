@@ -15,7 +15,8 @@ public class ExampleController {
 	 * 
 	 * 2) @GetMapping("주소")  : GET (조회)방식 요청 매핑
 	 * 
-	 *	  @PostMapping("주소") : POST(삽입) 방식 요청 매핑
+	 *	  @PostMapping("주소") : POST(삽입) 방식 요청 매핑 
+	 *						 - 조회에 쓰기도 하는데 보통 로그인할때..?
 	 *
 	 *	  @PutMapping("주소")  : PUT(수정) 방식 요청 매핑
 	 *							(form,js,a태그 요청 불가)
