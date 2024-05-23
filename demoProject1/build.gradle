@@ -1,0 +1,42 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.3'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'edu.kh'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+// 외부 연결된 사이트(https://mvnrepository.com/)에서
+// 아래에 작성된 모듈, 라이브러리를 다운로드 받아서 프로젝트에 자동으로 추가
+
+// Spring boot에 spring start project 처음 실행시에 선택 가능하고
+// mnv리파지토리에서 긁어다 추가 할수도 있다. -> 그러면 gradel에서 refresh 해야함
+// 라이브러리 , 배포, 빌드 관련 설정을 작성하는 파일임,
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
